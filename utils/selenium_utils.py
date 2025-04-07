@@ -46,3 +46,15 @@ def get_driver():
 
     driver = webdriver.Chrome(options=options)
     return driver 
+
+
+
+def sleeper():
+    x = random.uniform(3,8)
+    time.sleep(x)
+
+
+def enter_key(word,search):
+    search.clear()
+    search.send_keys("laptop")
+    search.send_keys(Keys.ENTER)
