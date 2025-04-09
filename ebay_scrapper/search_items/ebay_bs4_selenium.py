@@ -2,12 +2,11 @@ import os
 import sys
 import pandas as pd
 
-sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..")))
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-from utils.selenium_utils import get_driver, sleeper
+from ebay_scrapper.utils.selenium_utils import get_driver , sleeper
 
 driver = get_driver()
 

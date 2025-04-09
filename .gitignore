@@ -35,3 +35,8 @@ selenium_logs/
 
 # HTML Files (if not needed in version control)
 x.html
+# Jupyter Notebooks
+notebook/
+*.ipynb_checkpoints
+# Pytest cache
+__pycache__/
