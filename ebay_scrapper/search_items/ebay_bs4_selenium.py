@@ -28,10 +28,8 @@ soup = BeautifulSoup(response, "lxml")
 
 result_div = soup.find("div", id="srp-river-results")
 
-list_iems = result_div.find("ul", 
-                            class_="srp-results srp-list clearfix").find_all(
-    "li", class_="s-item s-item__pl-on-bottom"
-)
+list_iem_ul = result_div.find("ul", class_="srp-results srp-list clearfix")
+list_iems = list_iem_ul.find_all("li", class_="s-item s-item__pl-on-bottom")
 
 
 dic_list = []
@@ -59,8 +57,7 @@ for item in list_iems:
     dic_list.append(x)
 
 driver.quit()
+# Save to CSV
+
 df = pd.DataFrame(dic_list)
-df.to_csv("Searchign_items/ebay_laptops.csv", index=False)
-
-
-
+df.to_csv("sample_data/ebay_laptops.csv", index=False)

@@ -33,5 +33,5 @@ selenium_logs/
 *.bak
 *.swp
 
-
+# HTML Files (if not needed in version control)
 x.html
