@@ -36,6 +36,7 @@ def get_driver():
 
     # 🛡️ Anti-Detection Features
     options.add_argument("--no-sandbox")  # Bypass OS security model
+    # options.add_argument("--headless")  #for headless mode
     options.add_argument("--disable-blink-features=AutomationControlled")  # Hide automation
     options.add_argument("--disable-dev-shm-usage")  # Prevent crashes in Docker/VMs
     options.add_argument("--disable-infobars")  # Remove "Chrome is being controlled" message
