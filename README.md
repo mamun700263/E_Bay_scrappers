@@ -2,6 +2,6 @@
 
 to run searcing
 ```bash
-python3 -m ebay_scrapper.search_items.ebay_bs4_selenium.py
+python3 -m ebay_scrapper.search_items.search.py
 ```
 
