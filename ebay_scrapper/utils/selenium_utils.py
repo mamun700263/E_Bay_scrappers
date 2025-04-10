@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.service import Service
 
 
 
-def get_driver():
+def get_driver(headless=False, incognito=False):
     user_agents = [
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0",
@@ -35,8 +35,11 @@ def get_driver():
     options = Options()
 
     # 🛡️ Anti-Detection Features
+    if headless:
+        options.add_argument("--headless")
+    if incognito:
+        options.add_argument("--incognito")
     options.add_argument("--no-sandbox")  # Bypass OS security model
-    # options.add_argument("--headless")  #for headless mode
     options.add_argument("--disable-blink-features=AutomationControlled")  # Hide automation
     options.add_argument("--disable-dev-shm-usage")  # Prevent crashes in Docker/VMs
     options.add_argument("--disable-infobars")  # Remove "Chrome is being controlled" message
@@ -54,8 +57,8 @@ def get_driver():
 
 
 
-def sleeper():
-    x = random.uniform(3,8)
+def sleeper(start=3, end=8):
+    x = random.uniform(start,end)
     time.sleep(x)
 
 
