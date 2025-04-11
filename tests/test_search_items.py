@@ -1,4 +1,4 @@
-from ebay_scraper.search_items.search import search_items
+from ebay_scraper.searchItems.search import search_items
 
 
 def test_search_returns_dataframe():

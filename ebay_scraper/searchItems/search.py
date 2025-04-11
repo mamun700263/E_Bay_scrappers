@@ -8,12 +8,16 @@ from selenium.webdriver.common.keys import Keys
 from ebay_scraper.utils.selenium_utils import get_driver, sleeper
 
 
+def mamun_vai():
+    print("Hello, Mamun Vai! This is a test function.")
+
+
 def search_items(
     keyword="laptop",
     save_path="sample_data/",
     filename=None,
     file_format="csv"
-):
+    )-> pd.DataFrame:
     """
     Search for items on eBay and scrape name, price, and link.
 

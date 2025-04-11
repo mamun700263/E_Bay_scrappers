@@ -1,5 +1,7 @@
 import argparse
 
+from ebay_scraper.searchItems.search import search_items
+
 def main():
     parser = argparse.ArgumentParser(description="Search items on eBay and scrape product data.")
     parser.add_argument("--search", "-s", type=str, required=True, help="Search keyword (e.g. macbook)")
@@ -8,10 +10,15 @@ def main():
 
     args = parser.parse_args()
 
-    # For now, just print the inputs (we'll plug into your actual scraper soon)
-    print(f"Keyword: {args.search}")
-    print(f"Limit: {args.limit}")
-    print(f"Output: {args.output}")
+    print("Starting scraper...")
+
+    search_items(
+        keyword=args.search,
+        save_path="sample_data/",
+        filename=args.output,
+        file_format="csv",
+    )
+
 
 
 if __name__ == "__main__":
