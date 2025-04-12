@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 from ebay_scraper.utils.selenium_utils import get_driver, sleeper
+from ebay_scraper.utils.common import file_formate_checker
 
 
 def mamun_vai():
@@ -73,7 +74,7 @@ def search_items(
     full_path = os.path.join(save_path, f"{filename}.{file_format}")
 
     os.makedirs(save_path, exist_ok=True)
-
+    file_format = file_formate_checker(filename)
     if file_format == "csv":
         df.to_csv(full_path, index=False)
     elif file_format == "json":
